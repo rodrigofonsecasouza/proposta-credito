@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv=Content-Type content=text/html; charset=utf-8?>
+</head>
+<form>
+	<div class="form-group">
+		<label for="nome">Nome</label> <input required type="text"
+			class="form-control" id="nome" placeholder="Nome"
+			ng-model="proposta.nome">
+	</div>
+	<div class="form-group">
+		<label for="cpf">CPF</label> <input required type="text"
+			class="form-control" ng-model="proposta.cpf" id="cpf"
+			placeholder="CPF">
+	</div>
+	<div class="form-group">
+		<label for="idade">Idade</label> <input required type="number"
+			class="form-control" ng-model="proposta.idade" id="idade"
+			placeholder="Idade">
+	</div>
+	<div class="form-group">
+		<label for="sexo">Sexo</label> <select class="form-control" id="sexo"
+			ng-model="proposta.sexo" required>
+			<option>M</option>
+			<option>F</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="estadoCivil">Estado civil</label> <select
+			class="form-control" id="estadoCivil" ng-model="proposta.estadoCivil"
+			required>
+			<option>Solteiro(a)</option>
+			<option>Casado(a)</option>
+			<option>Divorciado(a)</option>
+			<option>Viuvo(a)</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<label for="estado">Estado</label> <input type="text"
+			ng-model="proposta.estado" class="form-control" id="estado"
+			placeholder="Estado" required>
+	</div>
+	<div class="form-group">
+		<label for="dependentes">Dependentes</label> <input type="number"
+			ng-model="proposta.dependentes" class="form-control" id="dependentes"
+			placeholder="Número de dependentes" required>
+	</div>
+	<div class="form-group">
+		<label for="renda">Renda</label>
+		<div class="input-group-prepend">
+			<span class="input-group-text">R$</span> <input type="number"
+				ng-model="proposta.renda" class="form-control" id="renda"
+				placeholder="Renda" required>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary" ng-click="salvar()">Salvar</button>
+</form>

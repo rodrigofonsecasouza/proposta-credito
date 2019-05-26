@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv=Content-Type content=text/html; charset=utf-8?>
+</head>
+<h2 class="text-center">Propostas</h2>
+<a class="btn btn-primary" href="#!/cadastroProposta" role="button"><i
+	class="fa fa-add"></i>Nova Proposta</a>
+<br />
+<br />
+<form class="form-inline">
+	<input id="cpf" class="form-control" placeholder="Pesquise pelo CPF"
+		ng-model="cpf" name="srch-term" type="text"/>
+	<button class="btn btn-secondary" type="submit" ng-click="findByCpf()">Pesquisar</button>
+</form>
+<br />
+
+<table class="table table-sm">
+	<thead class="table-secondary">
+		<tr>
+			<th scope="col">Nome</th>
+			<th scope="col">Idade</th>
+			<th scope="col">Sexo</th>
+			<th scope="col">Estado civil</th>
+			<th scope="col">Estado</th>
+			<th scope="col">Dependentes</th>
+			<th scope="col">Renda</th>
+			<th scope="col">Resultado Análise</th>
+			<th scope="col">Limite</th>
+			<th scope="col">Ações</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="proposta in propostas">
+			<td><span ng-bind="proposta.nome"></span></td>
+			<td><span ng-bind="proposta.idade"></span></td>
+			<td><span ng-bind="proposta.sexo"></span></td>
+			<td><span ng-bind="proposta.estadoCivil"></span></td>
+			<td><span ng-bind="proposta.estado"></span></td>
+			<td><span ng-bind="proposta.dependentes"></span></td>
+			<td><span ng-bind="proposta.renda"></span></td>
+			<td><span ng-bind="proposta.resultado"></span></td>
+			<td><span ng-bind="proposta.limite"></span></td>
+			<td>
+				<button class="btn btn-secondary"
+					ng-click="analisarProposta(proposta)" title="Reprocessar">
+					<i class="fa fa-sync"></i>
+				</button>
+			</td>
+		</tr>
+
+	</tbody>
+</table>
